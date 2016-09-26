@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>David Herrera</title>
+  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDXYNJJ2SYRAy0icJxfFISFHO0RIHKadYg",
+      authDomain: "blazing-inferno-1723.firebaseapp.com",
+      databaseURL: "https://blazing-inferno-1723.firebaseio.com",
+      storageBucket: "blazing-inferno-1723.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+
+<body ng-app="newSiteApp" ng-controller="MainCtrl" ng-cloak>
+  <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+  <div class="background-image" style="border:1px solid black">
+
+  </div>
+  <md-toolbar style="position:fixed;top:0;right:0;">
+    <div class="md-toolbar-tools" style="margin:0">
+
+      <h2>
+             <span class="first-name"> David  F. </span> <span class="last-name">Herrera</span>
+        </h2>
+      <span flex></span>
+      <div>
+        <md-content md-theme="docs-dark" style="background-color:#3f51b5">
+
+          <md-menu>
+            <md-button ng-click="$mdOpenMenu($event)" class="md-fab md-mini md-primary" aria-label="Open demo menu"><i class="icon ion-ios-bell"></i></md-button>
+            <md-menu-content width="6" style="padding:0;margin:0;overflow-y:none">
+              <!--<md-subheader style="background-color:rgb(0,150,136);color:white">Updates</md-subheader>-->
+              <md-toolbar md-scroll-shrink ng-if="true">
+                <div class="md-toolbar-tools">
+                  <h3>
+                    <span>Updates</span>
+                  </h3>
+                </div>
+              </md-toolbar>
+              <md-content style="overflow-y:none">
+                <md-list>
+                  <md-list-item ng-repeat="(key,item) in updateArray|orderBy:'Date':true " class="md-3-line" style="max-width:400px">
+
+                    <img ng-src="images/david-transparent.png" class="md-avatar" alt="david" />
+                    <div class="md-list-item-text" layout="column">
+                      <h4 style="color:grey">{{item.Date|DateUpdate}}</h4>
+                      <h3>{{ item.Title }}</h3>
+                      <p ng-bind-html="item.Content "></p>
+                    </div>
+                    <md-divider></md-divider>
+                  </md-list-item>
+                </md-list>
+
+                <div style="text-align:center;padding-bottom:10px;padding-top:5px"><a href ng-click="showAdvance()"> See All &raquo;</a></div>
+              </md-content>
+            </md-menu-content>
+          </md-menu>
+        </md-content>
+      </div>
+    </div>
+
+  </md-toolbar>
+  <div class="modal">
+    <div class="modal__content">
+      <div class="container">
+        <div ui-view=""></div>
+
+      </div>
+    </div>
+  </div>
+  <!--<div class="videos">
+    <md-content >
+    <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect md-center-tabs="true">
+      <md-tab ng-repeat="tab in tabs"
+              ng-disabled="tab.disabled"
+              label="{{tab.title}}">
+        <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+          <div ng-bind="tab.content"></div>
+          <br/>
+          <md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button>
+        </div>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
+ <div class="footer">
+          <md-content style="background-color:rgb(103, 58, 183);" layout-gt-sm="row" layout-padding>
+    <div class="container" style="height:300px">
+      <p>Phone Number: +1 (514) 641-9404</p>
+    </div>
+          </md-content>
+  </div>-->
+
+
+
+
+
+
+
+
+
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    ! function(A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+          (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/services/apiinterface.js"></script>
+  <script src="scripts/controllers/video.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
